@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Volt — EV charging for Ghana</title>
+  <meta name="description" content="Find chargers across Ghana, get turn-by-turn directions, watch your car charge live and pay with Mobile Money. Volt is coming soon to iPhone and Android.">
+  <meta property="og:title" content="Volt — Charge faster. Drive further.">
+  <meta property="og:description" content="Find, navigate, charge and pay with MoMo — all in one app.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta name="theme-color" content="#06080D">
+  <link rel="icon" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/poster.webp">
+  <link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" class="sprite" aria-hidden="true">
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12L13 2Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2.5" y="7" width="17" height="10" rx="2.5"/><path d="M22 10.5v3M6 10v4M9.5 10v4"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16.5h14M3.5 16.5V12l2-5h13l2 5v4.5M3.5 16.5V19M20.5 16.5V19"/><circle cx="7.5" cy="13.5" r=".8"/><circle cx="16.5" cy="13.5" r=".8"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></symbol>
+    <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4Z"/><path d="m16 10 4 4M20 10l-4 4"/></symbol>
+    <symbol id="i-sound-on" viewBox="0 0 24 24"><path d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5H4Z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  </svg>
+
+  <header class="nav" id="nav" data-theme="dark">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Volt home">
+        <span class="brand-mark"><svg><use href="#i-bolt"/></svg></span><span>Volt</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#operators">For operators</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#join">Join the waitlist</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero theme-dark" id="top" data-nav="dark">
+      <div class="hero-copy">
+        <p class="chip load-up" style="--d:0ms"><span class="dot" aria-hidden="true"></span>EV charging for Ghana</p>
+        <h1 class="load-up" style="--d:80ms">Charge faster.<br><span class="grad">Drive further.</span></h1>
+        <p class="hero-sub load-up" style="--d:160ms">Find chargers near you, get there turn by turn, watch your car charge live and pay with Mobile Money. All in one app.</p>
+        <form class="pill-form load-up" style="--d:240ms" data-kind="driver" id="join" novalidate>
+          <label for="hero-email" class="sr-only">Email address</label>
+          <input id="hero-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+          <button class="btn btn-primary" type="submit">Get early access</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+        <p class="stores load-up" style="--d:320ms">Coming soon to the App Store and Google Play</p>
+      </div>
+      <div class="hero-device load-up" style="--d:200ms">
+        <div class="glow" aria-hidden="true"></div>
+        <div class="device">
+          <video id="promo" src="assets/volt-app-720.mp4?v=2" poster="assets/poster.webp" autoplay muted loop playsinline preload="metadata"
+                 width="720" height="1564" aria-label="Volt app walkthrough: find a charger, check plugs, navigate, charge and pay"></video>
+        </div>
+        <button class="sound" id="sound" type="button" aria-pressed="false" aria-label="Turn sound on">
+          <svg class="off"><use href="#i-sound-off"/></svg><svg class="on"><use href="#i-sound-on"/></svg>
+          <span>Sound</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Payments -->
+    <section class="payments" aria-label="Payment options" data-nav="light">
+      <p>Pay your way</p>
+      <ul>
+        <li>MTN MoMo</li><li>Telecel Cash</li><li>AT Money</li><li>Visa</li><li>Mastercard</li>
+      </ul>
+    </section>
+
+    <!-- How it works -->
+    <section class="how" id="how" data-nav="light">
+      <header class="section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2>From low battery to back on the road.</h2>
+      </header>
+      <div class="how-grid">
+        <div class="how-device" aria-hidden="true">
+          <div class="device device-sm">
+            <img src="assets/screen-map.webp" alt="" class="is-active" width="720" height="1564">
+            <img src="assets/screen-nav.webp" alt="" width="720" height="1564" loading="lazy">
+            <img src="assets/screen-charge.webp" alt="" width="720" height="1564" loading="lazy">
+            <img src="assets/screen-momo.webp" alt="" width="720" height="1564" loading="lazy">
+          </div>
+        </div>
+        <ol class="steps">
+          <li class="step" data-step="0">
+            <figure class="step-shot"><div class="device device-xs"><img src="assets/screen-map.webp" alt="Map of nearby chargers with route and station card" width="720" height="1564" loading="lazy"></div></figure>
+            <div class="step-copy"><span class="step-num">01</span><h3>Find a charger</h3><p>See chargers near you with live prices, plug types and drive time. Swipe to compare.</p></div>
+          </li>
+          <li class="step" data-step="1">
+            <figure class="step-shot"><div class="device device-xs"><img src="assets/screen-nav.webp" alt="Turn-by-turn navigation inside the app" width="720" height="1564" loading="lazy"></div></figure>
+            <div class="step-copy"><span class="step-num">02</span><h3>Get there</h3><p>Turn-by-turn navigation right inside Volt, with your arrival time and the charger waiting.</p></div>
+          </li>
+          <li class="step" data-step="2">
+            <figure class="step-shot"><div class="device device-xs"><img src="assets/screen-charge.webp" alt="Live charging screen with a progress ring" width="720" height="1564" loading="lazy"></div></figure>
+            <div class="step-copy"><span class="step-num">03</span><h3>Plug in and charge</h3><p>Start in one tap and watch kWh, range and cost climb in real time. Stops at your limit.</p></div>
+          </li>
+          <li class="step" data-step="3">
+            <figure class="step-shot"><div class="device device-xs"><img src="assets/screen-momo.webp" alt="Approve the payment on your phone with MTN MoMo" width="720" height="1564" loading="lazy"></div></figure>
+            <div class="step-copy"><span class="step-num">04</span><h3>Pay with MoMo</h3><p>Approve on your phone with your MoMo PIN, or pay by card. Your receipt arrives instantly.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features theme-dark panel" id="features" data-nav="dark">
+      <header class="section-head reveal">
+        <p class="eyebrow">Built for drivers</p>
+        <h2>Everything you need between charges.</h2>
+      </header>
+      <div class="bento">
+        <article class="tile tile-live reveal">
+          <div class="tile-copy">
+            <svg class="tile-icon"><use href="#i-bolt"/></svg>
+            <h3>Live charging</h3>
+            <p>A live ring shows your battery filling, the power, time left and what you've spent so far.</p>
+          </div>
+          <div class="tile-visual live-visual" aria-hidden="true">
+            <div class="ring"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" class="track"/><circle cx="60" cy="60" r="52" class="fill"/></svg>
+              <div class="ring-label"><b>75<small>%</small></b><span>58 kW</span></div></div>
+            <dl class="live-stats"><div><dt>Added</dt><dd>41.3 kWh</dd></div><div><dt>Range</dt><dd>284 km</dd></div><div><dt>Cost</dt><dd>GH₵186.30</dd></div></dl>
+          </div>
+        </article>
+        <article class="tile tile-momo reveal">
+          <div class="tile-copy">
+            <svg class="tile-icon"><use href="#i-phone"/></svg>
+            <h3>Pay with Mobile Money</h3>
+            <p>MTN MoMo, Telecel Cash or AT Money. Approve with your PIN on your phone; Volt never sees it.</p>
+          </div>
+          <div class="tile-visual momo-visual" aria-hidden="true">
+            <img src="assets/screen-momo.webp" alt="" width="720" height="1564" loading="lazy">
+          </div>
+        </article>
+        <article class="tile tile-smart reveal">
+          <div class="tile-copy">
+            <svg class="tile-icon"><use href="#i-moon"/></svg>
+            <h3>Smart charging</h3>
+            <p>Plan sessions for off-peak hours and get reminded before they start.</p>
+          </div>
+          <div class="tile-visual timeline" aria-hidden="true">
+            <div class="tl-bar"><span class="tl-peak"></span><span class="tl-off"></span></div>
+            <div class="tl-labels"><span>18:00</span><span>23:00</span><span>06:00</span><span>08:00</span></div>
+            <p class="tl-note">Off-peak window · 23:00 – 06:00</p>
+          </div>
+        </article>
+        <article class="tile tile-sm reveal"><svg class="tile-icon"><use href="#i-battery"/></svg><h3>Battery-friendly limits</h3><p>Charge to 80% by default to protect your battery, and raise it for long trips.</p></article>
+        <article class="tile tile-sm reveal"><svg class="tile-icon"><use href="#i-receipt"/></svg><h3>Receipts and history</h3><p>Every session saved with energy, duration and cost. Every cedi, accounted for.</p></article>
+        <article class="tile tile-sm reveal"><svg class="tile-icon"><use href="#i-car"/></svg><h3>All your EVs</h3><p>Add each vehicle once; Volt matches chargers to your connector type.</p></article>
+        <article class="tile tile-sm reveal"><svg class="tile-icon"><use href="#i-bell"/></svg><h3>Alerts that matter</h3><p>Know when you're done, when a busy charger frees up, and nothing else.</p></article>
+      </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="showcase" data-nav="light">
+      <header class="section-head center reveal">
+        <p class="eyebrow">The app</p>
+        <h2>Designed for the drive.</h2>
+        <p class="lede">Your battery, the nearest charger and every receipt, always one tap away.</p>
+      </header>
+      <div class="showcase-phones" id="showcase">
+        <figure class="device device-md tilt-l"><img src="assets/screen-home.webp" alt="Home screen with battery, nearest charger and recent sessions" width="720" height="1564" loading="lazy"></figure>
+        <figure class="device device-md tilt-r"><img src="assets/screen-receipt.webp" alt="Digital receipt with a PAID stamp" width="720" height="1564" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <!-- Operators -->
+    <section class="operators theme-dark panel" id="operators" data-nav="dark">
+      <div class="ops-grid">
+        <div class="reveal">
+          <p class="eyebrow">For charging operators</p>
+          <h2>Put your chargers in front of every EV driver in Ghana.</h2>
+          <ul class="ticks">
+            <li><svg><use href="#i-check"/></svg>List your sites for free; drivers find and navigate to them</li>
+            <li><svg><use href="#i-check"/></svg>Connect live status and app payments over OCPI or OCPP</li>
+            <li><svg><use href="#i-check"/></svg>Get paid by MoMo and card, with clear settlement reports</li>
+          </ul>
+        </div>
+        <form class="ops-form reveal" data-kind="operator" novalidate>
+          <h3>Talk to us</h3>
+          <label class="field"><span>Work email</span><input name="email" type="email" autocomplete="email" required></label>
+          <label class="field"><span>Company or site name</span><input name="name" type="text" autocomplete="organization"></label>
+          <label class="field"><span>City</span><input name="city" type="text" placeholder="Accra" autocomplete="address-level2"></label>
+          <button class="btn btn-primary btn-block" type="submit">Request a call</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" data-nav="light">
+      <header class="section-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions, answered.</h2>
+        <p class="faq-more">Still have a question? <a href="mailto:hello@volt.example">Email us</a></p>
+      </header>
+      <div class="accordion reveal">
+        <details open><summary>When can I download Volt?</summary><div class="answer"><p>We're launching in Accra first, then Kumasi and Takoradi. Join the waitlist and you'll be among the first to get access.</p></div></details>
+        <details><summary>Which cars does Volt work with?</summary><div class="answer"><p>Any electric car with a CCS2, Type 2, CHAdeMO or GB/T connector. Add your car and Volt shows only chargers that fit it.</p></div></details>
+        <details><summary>How do I pay?</summary><div class="answer"><p>With MTN MoMo, Telecel Cash, AT Money, Visa or Mastercard. For MoMo you approve each payment on your phone with your PIN; Volt never sees it.</p></div></details>
+        <details><summary>Does Volt charge extra?</summary><div class="answer"><p>You pay the station's price per kWh plus a small, clearly shown service fee. No subscriptions.</p></div></details>
+        <details><summary>I run chargers. How do I join?</summary><div class="answer"><p>Use the operator form above. We can list your sites right away and connect live status and payments when you're ready.</p></div></details>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta theme-dark panel" data-nav="dark">
+      <div class="cta-mark reveal" aria-hidden="true"><img src="assets/icon.webp" alt="" width="96" height="96" loading="lazy"></div>
+      <h2 class="reveal">Be first to charge with Volt.</h2>
+      <form class="pill-form reveal" data-kind="driver" novalidate>
+        <label for="cta-email" class="sr-only">Email address</label>
+        <input id="cta-email" name="email" type="email" placeholder="Your email address" autocomplete="email" required>
+        <button class="btn btn-primary" type="submit">Join the waitlist</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer" data-nav="light">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Volt home"><span class="brand-mark"><svg><use href="#i-bolt"/></svg></span><span>Volt</span></a>
+        <p>EV charging, made for Ghana.</p>
+      </div>
+      <nav class="footer-cols" aria-label="Footer">
+        <div><h4>Product</h4><a href="#how">How it works</a><a href="#features">Features</a><a href="#faq">FAQ</a></div>
+        <div><h4>Company</h4><a href="#operators">For operators</a><a href="mailto:hello@volt.example">Contact</a></div>
+        <div><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <address>Volt Mobility · Airport City, Accra, Ghana · <a href="mailto:hello@volt.example">hello@volt.example</a></address>
+      <div class="social">
+        <a href="#" aria-label="Volt on X"><svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20"/></svg></a>
+        <a href="#" aria-label="Volt on Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        <a href="#" aria-label="Volt on LinkedIn"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3"/><path d="M8 10.5v6M8 7.5v.01M12 16.5v-3.5a2.5 2.5 0 0 1 5 0v3.5"/></svg></a>
+      </div>
+      <p class="copy">© <span id="year"></span> Volt</p>
+    </div>
+  </footer>
+
+  <script>
+    // Where waitlist sign-ups are sent. Point at your deployed API.
+    window.VOLT_API = window.VOLT_API || 'http://localhost:8080';
+  </script>
+  <script src="main.js?v=4" defer></script>
+</body>
+</html>
